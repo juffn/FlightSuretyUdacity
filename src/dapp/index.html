@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FlightSurety</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">FlightSurety</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <main class="container" style="margin-top: 80px;">
+        <div class="row top-20">
+            <div class="col-md-12">
+                <div id="display-wrapper" class="top-20">
+                    <hr>
+                </div>
+                <div class="row top-20">
+                    <div class="col-md-12">
+                        <hr>
+                        <p>Initiate payout to your wallet</p>
+                        <button class="btn btn-primary" id="withdraw-funds">Withdraw Insurance Payout</button>
+                    </div>
+                </div>
+                <hr>
+                <h3>Purchase Flight Insurance</h3>
+                <hr>
+                <form id="purchase-insurance-form">
+                    <div class="form-group">
+                        <label for="airline-address">Airline Address</label>
+                        <select class="form-control" id="airline-address">
+                            <option>0x806734A6F4A9Fb3E7Faf0A62A6710bA6983F86c4</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="flight-number">Flight Number</label>
+                        <select class="form-control" id="purchase-flight-number">
+                            <option>ND1309</option>
+                            <option>ND1310</option>
+                            <option>ND1311</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="insurance-amount">Insurance Amount</label>
+                        <input type="number" class="form-control" id="insurance-amount" min="0" max="1" step="0.01"
+                            placeholder="Up to 1 Eth Maximum">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Purchase Insurance</button>
+                </form>
+                <p class="mt-3">If the flight is delayed due to airline fault, you will receive 1.5 times the amount you
+                    paid as credit.</p>
+            </div>
+        </div>
+
+        <div class="row top-20">
+            <div class="col-md-12">
+                <h3>Request Flight Status Update</h3>
+                <hr>
+                <div class="form-group">
+                    <label for="flight-number">Flight Number</label>
+                    <select class="form-control" id="flight-number">
+                        <option>ND1309</option>
+                        <option>ND1310</option>
+                        <option>ND1311</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="submit-oracle">Submit to Oracles</button>
+            </div>
+        </div>
+
+        <div class="row top-20">
+            <div class="col-md-12">
+                <h3>Register a New Airline</h3>
+                <p>Registered airlines can register new airlines (unless there are >4 airlines registerred; then an
+                    airline must be registered by at least 50% of current registtered airlines.) </p>
+                <hr>
+                <form id="register-airline-form">
+                    <div class="form-group">
+                        <label for="airline-name">Airline Name</label>
+                        <input type="text" class="form-control" id="new-airline-name" placeholder="Enter airline name">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-airline-address">New Airline Address</label>
+                        <input type="text" class="form-control" id="new-airline-address"
+                            placeholder="Enter new airline address">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Register Airline</button>
+                </form>
+            </div>
+        </div>
+        <div class="row top-20">
+            <div class="col-md-12">
+                <h3>Airline Funding</h3>
+                <hr>
+                <form id="airline-funding-form">
+                    <div class="form-group">
+                        <p>Airlines that have already been registered, can use this form to fund the contract</p>
+                        <label for="funding-airline-address">Airline Address</label>
+                        <input type="text" class="form-control" id="funding-airline-address"
+                            placeholder="Enter airline address">
+                    </div>
+                    <div class="form-group">
+                        <label for="funding-amount">Funding Amount (10 Ether required)</label>
+                        <input type="number" class="form-control" id="funding-amount" min="10" max="10" placeholder="10"
+                            value="10">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Funding</button>
+                </form>
+                <p class="mt-3">An airline must submit at least 10 Ether to participate in the contract.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
